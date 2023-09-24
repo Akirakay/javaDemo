@@ -1,9 +1,9 @@
 package com.akira.leetcode.launch;
 
-import com.akira.leetcode.intersectionoftwolinkedlists160.IntersectionOfTwoLinkedLists;
+import com.akira.leetcode.addstrings415.AddStrings;
 
 public class Solution {
     public static void main(String[] args) {
-        IntersectionOfTwoLinkedLists.launch();
+        AddStrings.launch();
     }
 }
