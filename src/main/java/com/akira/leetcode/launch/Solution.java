@@ -1,9 +1,9 @@
 package com.akira.leetcode.launch;
 
-import com.akira.leetcode.addstrings415.AddStrings;
+import com.akira.leetcode.binarysearch704.BinarySearch;
 
 public class Solution {
     public static void main(String[] args) {
-        AddStrings.launch();
+        BinarySearch.launch();
     }
 }
