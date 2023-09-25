@@ -1,9 +1,9 @@
 package com.akira.leetcode.launch;
 
-import com.akira.leetcode.binarysearch704.BinarySearch;
+import com.akira.leetcode.climbingstairs70.ClimbingStairs;
 
 public class Solution {
     public static void main(String[] args) {
-        BinarySearch.launch();
+        ClimbingStairs.launch();
     }
 }
