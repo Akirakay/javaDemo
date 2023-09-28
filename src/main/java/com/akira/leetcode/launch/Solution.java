@@ -1,9 +1,9 @@
 package com.akira.leetcode.launch;
 
-import com.akira.leetcode.lcr140.LCR140;
+import com.akira.leetcode.palindromelinkedlist234.PalindromeLinkedList;
 
 public class Solution {
     public static void main(String[] args) {
-        LCR140.launch();
+        PalindromeLinkedList.launch();
     }
 }
