@@ -1,10 +1,11 @@
 package com.akira.leetcode.util;
 
+import com.akira.leetcode.common.ListNode;
+import com.akira.leetcode.common.TreeNode;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.akira.leetcode.common.ListNode;
 
 public class ListUtil {
     public static ListNode arrToListNode(int[] arr) {
@@ -32,6 +33,33 @@ public class ListUtil {
                 list.get(list.size() - 1).next = list.get(pos);
             }
             return list.get(0);
+        }
+        return null;
+    }
+
+    public static TreeNode arrToTreeNode(Integer[] arr) {
+        if (arr.length > 0) {
+            TreeNode [] nodeArray = new TreeNode[arr.length];
+            for (int i = arr.length - 1; i >= 0; i--) {
+                Integer ele = arr[i];
+                if (ele != null) {
+                    TreeNode node = new TreeNode(ele);
+                    int left = i * 2 + 1;
+                    int right = i * 2 + 2;
+                    if (left < arr.length) {
+                        node.left = nodeArray[left];
+                    }
+                    if (right < arr.length) {
+                        node.right = nodeArray[right];
+                    }
+                    nodeArray[i] = node;
+                } else {
+                    nodeArray[i] = null;
+                }
+            }
+            TreeNode treeNode = nodeArray[0];
+            nodeArray = null;
+            return treeNode;
         }
         return null;
     }
