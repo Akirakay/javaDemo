@@ -15,7 +15,8 @@ public class LowestCommonAncestorOfABinaryTree {
         TreeNode root = ListUtil.arrToTreeNode(new Integer[]{3, 5, 1, 6, 2, 0, 8, null, null, 7, 4});
         TreeNode p = new TreeNode(5);
         TreeNode q = new TreeNode(1);
-        TreeNode treeNode = solution.lowestCommonAncestor(root, p, q);
+//        TreeNode treeNode = solution.lowestCommonAncestor(root, p, q);
+        TreeNode treeNode = solution.lowestCommonAncestor2(root, p, q);
         System.out.println(treeNode.val);
     }
 
@@ -32,5 +33,27 @@ public class LowestCommonAncestorOfABinaryTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         this.dfs(root, p, q);
         return this.ans;
+    }
+
+
+    // solution2:后序遍历 + 回溯
+    public TreeNode lowestCommonAncestor2(TreeNode root, TreeNode p, TreeNode q) {
+        if (root == null || root.val == p.val || root.val == q.val) { // 递归结束条件
+            return root;
+        }
+
+        // 后序遍历
+        TreeNode left = lowestCommonAncestor2(root.left, p, q);
+        TreeNode right = lowestCommonAncestor2(root.right, p, q);
+
+        if (left == null && right == null) { // 若未找到节点 p 或 q
+            return null;
+        } else if (left == null && right != null) { // 若找到一个节点
+            return right;
+        } else if (left != null && right == null) { // 若找到一个节点
+            return left;
+        } else { // 若找到两个节点
+            return root;
+        }
     }
 }
