@@ -1,11 +1,11 @@
 package com.akira.leetcode.launch;
 
-import com.akira.leetcode.binarytreelevelordertraversal102.BinaryTreeLevelOrderTraversal;
+import com.akira.leetcode.removenthnodefromendoflist19.RemoveNthNodeFromEndOfList;
 
 public class Solution {
     public static void main(String[] args) {
         long startTime = System.currentTimeMillis();
-        BinaryTreeLevelOrderTraversal.launch();
+        RemoveNthNodeFromEndOfList.launch();
         long endTime = System.currentTimeMillis();
         System.out.println("耗时：" + (endTime - startTime) + "ms");
     }
