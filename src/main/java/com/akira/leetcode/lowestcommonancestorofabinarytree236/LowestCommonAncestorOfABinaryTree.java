@@ -1,4 +1,4 @@
-package com.akira.leetcode;
+package com.akira.leetcode.lowestcommonancestorofabinarytree236;
 
 import com.akira.leetcode.common.TreeNode;
 import com.akira.leetcode.util.ListUtil;
