@@ -11,6 +11,15 @@ package com.akira.leetcode.util;
  */
 public class ArrayUtil {
 
+    public static void traverseOneDimensionalArray(int[] array) {
+        if (array == null) {
+            return;
+        }
+        for (int ele : array) {
+            System.out.print(ele + " ");
+        }
+    }
+
     public static void traverseTwoDimensionalArray(int[][] array) {
         if (array == null) {
             return;
