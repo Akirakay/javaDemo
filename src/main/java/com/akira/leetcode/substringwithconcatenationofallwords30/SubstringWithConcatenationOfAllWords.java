@@ -1,4 +1,4 @@
-package substringwithconcatenationofallwords30;
+package com.akira.leetcode.substringwithconcatenationofallwords30;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.Map;
 
 /**
  * @projectName: javaDemo
- * @package: substringwithconcatenationofallwords30
+ * @package: com.akira.leetcode.substringwithconcatenationofallwords30
  * @className: SubstringWithConcatenationOfAllWords
  * @author: tzk
  * @description: TODO
