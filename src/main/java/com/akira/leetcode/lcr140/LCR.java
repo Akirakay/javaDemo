@@ -4,9 +4,9 @@ package com.akira.leetcode.lcr140;
 import com.akira.leetcode.common.ListNode;
 import com.akira.leetcode.util.ListUtil;
 
-public class LCR140 {
+public class LCR {
     public static void launch() {
-        LCR140 solution = new LCR140();
+        LCR solution = new LCR();
         ListNode head = ListUtil.arrToListNode(new int[]{2, 4, 7, 8});
         ListNode node = solution.trainingPlan(head, 1);
         System.out.println(node.val);
