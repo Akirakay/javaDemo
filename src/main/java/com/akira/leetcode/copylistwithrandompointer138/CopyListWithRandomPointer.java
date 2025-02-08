@@ -4,6 +4,7 @@ import com.akira.leetcode.common.Node;
 import com.akira.leetcode.util.NodeUtil;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @projectName: javaDemo
@@ -19,9 +20,33 @@ public class CopyListWithRandomPointer {
         CopyListWithRandomPointer solution = new CopyListWithRandomPointer();
         Integer[][] arr = new Integer[][]{{7, null}, {13, 0}, {11, 4}, {10, 2}, {1, 0}};
         Node head = NodeUtil.buildLinkedList(arr);
-        Node newHead = solution.copyRandomList(head);
+        Node newHead = solution.copyRandomListOfficial(head);
         NodeUtil.printLinkedList(newHead);
     }
+
+    Map<Node, Node> cachedNode = new HashMap<Node, Node>();
+
+    /**
+     * official solution
+     * @param head
+     * @return com.akira.leetcode.common.Node
+     * @author Ak1ra
+     * @date 2025/2/8 10:51
+     * @description
+     */
+    public Node copyRandomListOfficial(Node head) {
+        if (head == null) {
+            return null;
+        }
+        if (!cachedNode.containsKey(head)) {
+            Node headNew = new Node(head.val);
+            cachedNode.put(head, headNew);
+            headNew.next = copyRandomListOfficial(head.next);
+            headNew.random = copyRandomListOfficial(head.random);
+        }
+        return cachedNode.get(head);
+    }
+
 
     /**
      *
