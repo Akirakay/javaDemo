@@ -1,5 +1,8 @@
 package com.akira.leetcode.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @projectName: javaDemo
  * @package: com.akira.leetcode.util
@@ -32,5 +35,27 @@ public class ArrayUtil {
             // 每一行遍历完成后换行
             System.out.println();
         }
+    }
+
+    public static List<Integer> trans2List(int[] array) {
+        if (array == null) {
+            return null;
+        }
+        List<Integer> list = new ArrayList<>(array.length);
+        for (int ele: array) {
+            list.add(ele);
+        }
+        return list;
+    }
+
+    public static List<List<Integer>> trans2List(int[][] array) {
+        if (array == null) {
+            return null;
+        }
+        List<List<Integer>> list = new ArrayList<>(array.length);
+        for (int[] arr: array) {
+            list.add(trans2List(arr));
+        }
+        return list;
     }
 }
