@@ -5,7 +5,7 @@ public class RemoveDuplicatesFromSortedArrayII {
     public static void launch() {
         RemoveDuplicatesFromSortedArrayII solution = new RemoveDuplicatesFromSortedArrayII();
         int[] arr = new int[]{1,1,1,2,2,3};
-        int num = solution.removeDuplicates(arr);
+        int num = solution.removeDuplicatesUsingSort(arr);
         for (int i = 0; i < num; i++) {
             System.out.print(arr[i] + " ");
         }
@@ -27,5 +27,24 @@ public class RemoveDuplicatesFromSortedArrayII {
             ++fast;
         }
         return slow;
+    }
+
+    /**
+     * 牛人思路：直接利用排序的特性，如果当前元素大于前两个元素，则保留当前元素，否则跳过当前元素 i是数据应该存放的下标
+     * @param nums
+     * @return int
+     * @author Ak1ra
+     * @date 2025/3/15 13:17
+     * @description
+     */
+    public int removeDuplicatesUsingSort(int[] nums) {
+        int i = 0;
+        for (int num : nums) {
+            if (i < 2 || num > nums[i - 2]) {
+                nums[i++] = num;
+            }
+        }
+
+        return i;
     }
 }
